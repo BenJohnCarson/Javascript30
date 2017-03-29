@@ -9,8 +9,6 @@ describe("index", function() {
                 currentTime: 5,
                 play: function(){}
             };
-
-
         })
         it("sets currentTime back to 0", function() {
             playSound(audioMock);
