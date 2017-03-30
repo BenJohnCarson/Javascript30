@@ -1,11 +1,11 @@
-// "use strict";
+"use strict";
 
 function playEffect(e) {
-    elements = getElements(e);
-    audio = elements.audioEl;
-    key = elements.keyEl;
+    const elements = getElements(e);
+    const audio = elements.audioEl;
+    const key = elements.keyEl;
     playSound(audio);
-    playButton(key);
+    addPlaying(key);
 }
 
 function playSound(audio) {
@@ -14,13 +14,17 @@ function playSound(audio) {
     audio.play();
 }
 
-function playButton(key) {
+function addPlaying(key) {
     key.classList.add('playing');
 }
 
 function removeTransition(e) {
     if (e.propertyName !== 'transform') return;
-    this.classList.remove('playing');
+    removePlaying(this);
+}
+
+function removePlaying(key) {
+    key.classList.remove('playing');
 }
 
 function getElements(e) {
