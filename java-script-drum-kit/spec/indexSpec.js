@@ -54,7 +54,7 @@ describe("index", function() {
             };
         })
 
-        it("adds 'playing' to classList", function() {
+        it("removes 'playing' to classList", function() {
             removePlaying(keyMock);
             expect(keyMock.classList.remove).toHaveBeenCalledWith('playing');
         })
