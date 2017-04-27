@@ -105,6 +105,7 @@
 
   function handleCheck(e) {
     let inBetween = false;
+    console.log(this);
     if(e.shiftKey && this.checked) {
       checkboxes.forEach(checkbox => {
         if(checkbox === this || checkbox === lastChecked) {
