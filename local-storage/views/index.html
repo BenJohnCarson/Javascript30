@@ -23,6 +23,9 @@
       <input type="text" name="item" placeholder="Item Name" required>
       <input type="submit" value="+ Add Item">
     </form>
+    <div class="button-wrapper">
+      <button id="clear-button" type="button" onclick="clearAll()">Clear All</button>
+    </div>
   </div>
 
 <script>
@@ -67,11 +70,20 @@
     localStorage.setItem(keyName, JSON.stringify(values));
   }
 
+  function clearAll() {
+    localStorage.removeItem("items");
+    populateList(items, itemsList);
+  }
+
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
   populateList(items, itemsList);
 
+  // Clear all, check all, uncheck all
+
+
 </script>
+
 
 </body>
 </html>
