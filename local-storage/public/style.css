@@ -33,6 +33,10 @@
       display: flex;
     }
 
+    .button-wrapper button {
+      margin-left: 10px;
+    }
+
     h2 {
       text-align: center;
       margin: 0;

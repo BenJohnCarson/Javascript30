@@ -24,7 +24,9 @@
       <input type="submit" value="+ Add Item">
     </form>
     <div class="button-wrapper">
-      <button id="clear-button" type="button" onclick="clearAll()">Clear All</button>
+      <button type="button" onclick="clearAll()">Clear All</button>
+      <button type="button" onclick="checkAll(true)">Check All</button>
+      <button type="button" onclick="checkAll(false)">Un-Check All</button>
     </div>
   </div>
 
@@ -72,15 +74,20 @@
 
   function clearAll() {
     localStorage.removeItem("items");
+    items.length = 0;
+    populateList(items, itemsList);
+  }
+
+  function checkAll(bool) {
+    items.forEach(item => {
+      item.done = bool;
+    })
     populateList(items, itemsList);
   }
 
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
   populateList(items, itemsList);
-
-  // Clear all, check all, uncheck all
-
 
 </script>
 
